@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Sara AI</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+    <img src="{{ url_for('static', filename='images/sara-logo.png') }}"
+         alt="Sara AI">
+</div>
+
+            <div>
+
+                <h2>Sara AI</h2>
+
+                <p>Your AI Assistant</p>
+
+            </div>
+
+        </div>
+
+
+        <button class="new-chat">
+
+            <i class="fa-solid fa-plus"></i>
+
+            New Chat
+
+        </button>
+
+
+        <div class="history">
+
+            <h4>Recent Chats</h4>
+
+            <div id="chat-history"></div>
+
+        </div>
+
+
+        <div class="sidebar-footer" id="settingsBtn">
+
+    <i class="fa-solid fa-gear"></i>
+
+    Settings
+
+</div>
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <div id="chat-box">
+
+            <div class="welcome">
+
+                <div class="welcome-logo">
+    <img src="{{ url_for('static', filename='images/sara-logo.png') }}"
+         alt="Sara AI">
+</div>
+
+
+                <h1>Sara AI</h1>
+
+                <p>Your Intelligent AI Assistant</p>
+
+
+                <div class="cards">
+
+
+                    <div class="card" id="code-card">
+
+                        💻
+
+                        <h3>Code</h3>
+
+                        <p id="code-text">
+                            Generate Java, Python and Web code
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card" id="study-card">
+
+                        📚
+
+                        <h3>Study</h3>
+
+                        <p id="study-text">
+                            Explain difficult topics
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card" id="idea-card">
+
+                        💡
+
+                        <h3>Ideas</h3>
+
+                        <p id="idea-text">
+                            Brainstorm AI projects
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card" id="general-card">
+
+                        🌍
+
+                        <h3>General</h3>
+
+                        <p id="general-text">
+                            Ask anything
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+           
+
+        <div class="input-container">
+
+            <textarea
+                id="message"
+                rows="1"
+                placeholder="Message Sara AI..."></textarea>
+
+            <button id="sendBtn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+<!-- ================= SETTINGS POPUP ================= -->
+
+<div id="settingsModal" class="settings-modal">
+
+    <div class="settings-content">
+
+        <span id="closeSettings">&times;</span>
+
+        <h2>⚙ Sara AI Settings</h2>
+
+        <div class="setting">
+
+            <label>🤖 AI Model</label>
+
+            <select id="modelSelect">
+
+                <option value="llama3.2:1b">llama3.2:1b</option>
+
+                <option value="llama3.2:3b">llama3.2:3b</option>
+
+                <option value="mistral">Mistral</option>
+
+                <option value="gemma3">Gemma 3</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="setting">
+
+            <label>😊 Personality</label>
+
+            <select id="personalitySelect">
+
+                <option value="friendly">Friendly</option>
+
+                <option value="teacher">Teacher</option>
+
+                <option value="coder">Coding Expert</option>
+
+                <option value="creative">Creative</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="setting">
+
+            <label>🎨 Theme</label>
+
+            <select id="themeSelect">
+
+                <option value="dark">Dark</option>
+
+                <option value="light">Light</option>
+
+            </select>
+
+        </div>
+
+
+        <button id="saveSettings">
+
+            💾 Save Settings
+
+        </button>
+
+
+        <button id="clearChats">
+
+            🗑 Clear All Chats
+
+        </button>
+
+
+        <hr>
+
+        <h3>About</h3>
+
+        <p><strong>Sara AI</strong></p>
+
+        <p>Version 1.0</p>
+
+        <p>Powered by Ollama</p>
+
+        <p>Developed by Sanskriti Mishra</p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
